@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { siteConfig } from '@/lib/site-config';
 import { WhatsAppOfficialIcon } from '@/components/footer';
+import { trackContactFormSubmit } from '@/lib/gtag';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -43,6 +44,12 @@ export default function ContactPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
+      });
+
+      // Track GA4 Custom Event
+      trackContactFormSubmit({
+        project_type: formData.projectType,
+        budget: formData.budget,
       });
 
       // 2. Compose and launch direct pre-filled email to intouchglobaltech@gmail.com

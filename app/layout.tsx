@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import { Navbar } from '@/components/navbar';
 import { Footer, WhatsAppButton } from '@/components/footer';
 import { CustomCursor } from '@/components/custom-cursor';
+import { GoogleAnalytics } from '@/components/google-analytics';
 import { siteConfig } from '@/lib/site-config';
 
 const fontSans = Plus_Jakarta_Sans({
@@ -63,6 +64,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
       <body className={`min-h-screen bg-background font-sans antialiased ${fontSans.className}`}>
+        <GoogleAnalytics />
         <CustomCursor />
         <Navbar />
         <main>{children}</main>
