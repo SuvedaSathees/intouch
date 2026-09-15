@@ -106,6 +106,12 @@ export function Footer() {
                     <span>Projects</span>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/blog" className="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 py-0.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shrink-0" />
+                    <span>Blog</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 
